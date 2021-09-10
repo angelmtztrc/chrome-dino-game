@@ -36,11 +36,6 @@ is-core-module@^2.2.0:
   dependencies:
     has "^1.0.3"
 
-kaboom@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/kaboom/-/kaboom-0.5.1.tgz#84ea681aebf89651b43f88279d94bc5ac5c28b66"
-  integrity sha512-OgNAQBquC2WQNQAKkOmDclAKJ0zDSqPMEYPF8/QOPlWt42umAO0JI3RSDlGJvg1HQcVIXUxrvPUvmjgTv6c2/A==
-
 nanoid@^3.1.23:
   version "3.1.25"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.25.tgz#09ca32747c0e543f0e1814b7d3793477f9c8e152"
@@ -79,11 +74,6 @@ source-map-js@^0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-0.6.2.tgz#0bb5de631b41cfbda6cfba8bd05a80efdfd2385e"
   integrity sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug==
-
-typescript@^4.3.2:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.3.tgz#bdc5407caa2b109efd4f82fe130656f977a29324"
-  integrity sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==
 
 vite@^2.5.4:
   version "2.5.6"
