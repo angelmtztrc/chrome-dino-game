@@ -36,6 +36,11 @@ is-core-module@^2.2.0:
   dependencies:
     has "^1.0.3"
 
+kaboom@^2000.0.0-beta.15:
+  version "2000.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/kaboom/-/kaboom-2000.0.0-beta.15.tgz#a619b892eee493945bb20aeedcd418c5bb080cdf"
+  integrity sha512-JVeEFWz73K5cH5hZvEzjD0Wu+H7Dd61BSaTJqPvYyPM6NVEgmtFCtxdmvW4dzsOGpExj1awqDf/C2ZOAcp86Sw==
+
 nanoid@^3.1.23:
   version "3.1.25"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.25.tgz#09ca32747c0e543f0e1814b7d3793477f9c8e152"
