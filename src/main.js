@@ -3,6 +3,8 @@ import kaboom from 'kaboom';
 const main = document.getElementById('main');
 
 const FLOOR_HEIGHT = 20;
+const JUMP_FORCE = 800;
+const SPEED = 200;
 
 kaboom({
   global: true,
@@ -15,11 +17,12 @@ kaboom({
 layers(['bg', 'game', 'ui'], 'game');
 
 loadRoot('src/images/');
-loadSprite('dino', 'dino.png');
 loadSprite('desert', 'background.png');
+loadSprite('dino', 'dino.png');
+loadSprite('cactus', 'cactus.png');
 
 scene('game', () => {
-  gravity(2400);
+  gravity(2200);
 
   // adds a background
   add([
@@ -32,13 +35,7 @@ scene('game', () => {
   ]);
 
   // adds the dino
-  const dino = add([
-    sprite('dino'),
-    pos(30, height() - 100),
-    scale(1),
-    area(),
-    body()
-  ]);
+  const dino = add([sprite('dino'), pos(40, height() - 100), area(), body()]);
 
   // adds the floor
   add([
@@ -51,10 +48,27 @@ scene('game', () => {
   ]);
 
   // actions
-  const jump = () => dino.grounded() && dino.jump();
+  const jump = () => dino.grounded() && dino.jump(JUMP_FORCE);
 
   // on actions
   keyPress('space', jump);
+  keyPress('up', jump);
+  keyPress('w', jump);
+
+  // function to spawn a random cactus
+  const spawnCactus = () => {
+    add([
+      sprite('cactus'),
+      scale(0.8),
+      pos(width(), height() - FLOOR_HEIGHT),
+      origin('botleft'),
+      move(LEFT, SPEED)
+    ]);
+
+    wait(rand(1, 2), spawnCactus);
+  };
+
+  spawnCactus();
 });
 
 go('game');
