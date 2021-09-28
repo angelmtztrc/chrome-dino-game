@@ -1,4 +1,4 @@
-import kaboom from 'kaboom';
+import kaboom from "https://unpkg.com/kaboom@next/dist/kaboom.mjs";
 
 const main = document.getElementById('main');
 
@@ -20,6 +20,7 @@ loadRoot('src/images/');
 loadSprite('desert', 'background.png');
 loadSprite('dino', 'dino.png');
 loadSprite('cactus', 'cactus.png');
+loadSprite('restart', 'restart.png');
 
 scene('game', () => {
   gravity(2400);
@@ -105,7 +106,7 @@ scene('lose', score => {
 
   add([
     sprite('dino'),
-    pos(width() / 2, height() / 2 - 80),
+    pos(width() / 2, height() / 2 - 100),
     scale(2),
     origin('center')
   ]);
@@ -113,10 +114,22 @@ scene('lose', score => {
   // display score
   add([
     text(score),
-    pos(width() / 2, height() / 2 + 80),
+    pos(width() / 2, height() / 2 + 20),
     scale(1),
     origin('center')
   ]);
+
+  // add reset sprite
+  add([
+    sprite('restart'),
+    pos(width() / 2, height() / 2 + 100),
+    scale(0.15),
+    origin('center')
+  ]);
+
+  // go back to game with space is pressed
+	keyPress("space", () => go("game"));
+	mouseClick(() => go("game"));
 });
 
 go('game');
